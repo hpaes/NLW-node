@@ -14,7 +14,7 @@ class CreateUserService {
       throw new Error("Incorrect email");
     }
 
-    const userAlreadyExists = await usersRepository.findOne({ name });
+    const userAlreadyExists = await usersRepository.findOne({ email });
 
     if (userAlreadyExists) {
       throw new Error("User already exists");
